@@ -1,12 +1,12 @@
-package strings.com.algorithms.strings.permutations;
+package com.algorithms.backtracking.permutations;
 
 import java.util.ArrayList;
 
-public class Permutations {
-    public static  ArrayList<String> getAllPermutations(String str) {
+public class StringPermutations {
+    public static  ArrayList<String> permute(String str) {
         var results = new ArrayList<String>();
 
-        Permutations.permutation(str, "", results);
+        StringPermutations.permutation(str, "", results);
         return results;
     }
 
