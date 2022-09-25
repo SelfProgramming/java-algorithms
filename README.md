@@ -1,2 +1,2 @@
 # java-algorithms
-Algorithms written in Java Programming Language
+Algorithms and Data Structures written in Java Programming Language
