@@ -34,6 +34,7 @@ public class WeightedQuickUnion {
     private int findRoot(int p) {
         var id = p;
         while (items[id] != id) {
+            items[id] = items[items[id]]; // path compression
             id = items[id];
         }
 
