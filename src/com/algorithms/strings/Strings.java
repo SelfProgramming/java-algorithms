@@ -86,4 +86,38 @@ public class Strings {
 
         return true;
     }
+
+    public boolean oneAway(String str1, String str2) {
+        char[] chars1 = str1.toCharArray();
+        char[] chars2 = str2.toCharArray();
+
+        var lengthDiff = Math.abs(chars1.length - chars2.length);
+        if (lengthDiff > 1) {
+            return false;
+        }
+
+        char[] shorter = chars1.length > chars2.length ? chars2 : chars1;
+        char[] longer = chars1.length > chars2.length ? chars1 : chars2;
+
+        var foundDiff = false;
+        int i = 0;
+        int j = 0;
+
+        while (i < shorter.length && j < longer.length) {
+            if (shorter[i] != longer[j]) {
+                if (foundDiff)  return false;
+                foundDiff = true;
+
+                if (shorter.length == longer.length) {
+                    i++;
+                }
+            } else {
+                i++;
+            }
+
+            j++;
+        }
+
+        return foundDiff || lengthDiff == 1;
+    }
 }

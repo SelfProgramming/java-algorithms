@@ -53,4 +53,36 @@ class StringsTest {
         // With additional DS (N)
         assertFalse(new Strings().checkIsPermutationWithDS(str1, str2));
     }
+
+    @Test
+    void testOneAwayRemoved() {
+        var str1 = "pale";
+        var str2 = "ple";
+
+        assertTrue(new Strings().oneAway(str1, str2));
+    }
+
+    @Test
+    void testOneAwayReplaced() {
+        var str1 = "pale";
+        var str2 = "bale";
+
+        assertTrue(new Strings().oneAway(str1, str2));
+    }
+
+    @Test
+    void testOneAwayAdded() {
+        var str1 = "pale";
+        var str2 = "pales";
+
+        assertTrue(new Strings().oneAway(str1, str2));
+    }
+
+    @Test
+    void testNotOneAway() {
+        var str1 = "bale";
+        var str2 = "pales";
+
+        assertFalse(new Strings().oneAway(str1, str2));
+    }
 }
